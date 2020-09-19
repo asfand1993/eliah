@@ -1,12 +1,12 @@
-import React from "react";
-import Slider from "react-slick";
+import React from 'react'
+import Slider from 'react-slick'
 
-import { PrevArrow, NextArrow } from "../../Other/SliderArrow";
+import { PrevArrow, NextArrow } from '../../Other/SliderArrow'
 
-export default function ProductDetailSlideOne({ data }) {
+export default function ProductDetailSlideOne ({ data }) {
   const settings = {
     customPaging: function (i) {
-      return <div className="slider__dot"></div>;
+      return <div className='slider__dot'></div>
     },
     dots: true,
     infinite: true,
@@ -14,18 +14,20 @@ export default function ProductDetailSlideOne({ data }) {
     slidesToShow: 1,
     slidesToScroll: 1,
     prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
-  };
+    nextArrow: <NextArrow />
+  }
   return (
-    <div className="product-detail__slide-one">
+    <div className='product-detail__slide-one'>
       <Slider {...settings}>
-        {data.images &&
-          data.images.map((img, index) => (
-            <div key={index} className="slider__item">
-              <img src={img} alt="Product image" />
+        {data.files &&
+          data.files.map((img, index) => (
+            <div key={index} className='slider__item'>
+              <img
+                src={`${img['edgeUrl']}/fit-in/400x400/${img['accessUrl']}`}
+              />
             </div>
           ))}
       </Slider>
     </div>
-  );
+  )
 }
