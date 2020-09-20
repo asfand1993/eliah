@@ -13,7 +13,7 @@ export default function ProductTabSlideOne({ data }) {
   const settings = {
     centerMode: true,
     centerPadding: "250px",
-    slidesToShow: 4,
+    slidesToShow: 2,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
     responsive: [
@@ -21,21 +21,21 @@ export default function ProductTabSlideOne({ data }) {
         breakpoint: 1500,
         settings: {
           centerPadding: "200px",
-          slidesToShow: 3,
+          slidesToShow: 1,
         },
       },
       {
         breakpoint: 1140,
         settings: {
           centerPadding: "100px",
-          slidesToShow: 3,
+          slidesToShow: 1,
         },
       },
       {
         breakpoint: 992,
         settings: {
           centerPadding: "100px",
-          slidesToShow: 2,
+          slidesToShow: 1,
         },
       },
       {

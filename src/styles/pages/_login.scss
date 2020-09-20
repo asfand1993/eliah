@@ -1,0 +1,214 @@
+@import "https://fonts.googleapis.com/css?family=Roboto:300";
+/* Sign In stuff */
+/* Show Case */
+/* Footer */
+/* Button  */
+/*  Media query */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #050505ce;
+}
+h1 {
+  font-weight: 300;
+}
+h2 {
+  font-weight: 300;
+}
+h3 {
+  font-weight: 300;
+}
+h4 {
+  font-weight: 300;
+}
+h5 {
+  font-weight: 300;
+}
+h6 {
+  font-weight: 300;
+}
+#login {
+  display: flex;
+  flex-direction: row;
+}
+#left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+#right {
+  flex: 1;
+}
+#sign-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding-bottom: 1rem;
+  form {
+    width: 80%;
+    padding-bottom: 3rem;
+  }
+  .logo {
+    margin-bottom: 8vh;
+    img {
+        height: 2.9em;
+        width: 8.1875em;
+
+        object-fit: cover;
+    }
+  }
+  label {
+    font-size: 0.9rem;
+    line-height: 2rem;
+    font-weight: 500px;
+  }
+  .text-input {
+    margin-bottom: 1.3rem;
+    width: 100%;
+    border-radius: 2px;
+    background: #181818;
+    border: 1px solid #555;
+    color: #ccc;
+    padding: 0.5rem 1rem;
+  }
+  .primary-btn {
+    width: 100%;
+  }
+  .secondary-btn {
+    width: 60%;
+  }
+  .link {
+    a {
+      display: block;
+      color: #050505ce;
+      text-emphasis: none;
+      margin-bottom: 1rem;
+    }
+  }
+  .or {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.2rem;
+    align-items: center;
+    .bar {
+      flex: auto;
+      border: none;
+      height: 1px;
+      background-color: #aaa;
+    }
+    span {
+      color: #ccc;
+      padding: 0 0.8rem;
+    }
+  }
+}
+.or {
+  width: 60%;
+}
+.links {
+  width: 60%;
+}
+#showcase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: url("/assets/images/login-bg.png") no-repeat center center/cover;
+  height: 100vh;
+  .showcase-text {
+    font-size: 3rem;
+    width: 100%;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+  }
+  .secondary-btn {
+    width: 60%;
+    margin: auto;
+  }
+}
+#main-footer {
+  a {
+    color: #f96816;
+    text-decoration: underline;
+  }
+  color: #ccc;
+  text-align: center;
+  font-size: 0.8rem;
+  max-width: 80%;
+  padding-top: 5rem;
+}
+.primary-btn {
+  padding: 0.7rem 1rem;
+  height: 2.7rem;
+  display: block;
+  border: 0;
+  border-radius: 2px;
+  font-weight: 500;
+  background: #f96816;
+  color: #050505ce;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.5s;
+  &:hover {
+    background-color: #ff7b39;
+  }
+}
+.secondary-btn {
+  padding: 0.7rem 1rem;
+  height: 2.7rem;
+  display: block;
+  border: 1px solid #050505ce;
+  border-radius: 2px;
+  font-weight: 500;
+  background: none;
+  color: #050505ce;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  &:hover {
+    border-color: #ff7b39;
+    color: #ff7b39;
+  }
+}
+@media (min-width: 1200px) {
+  #left {
+    flex: 2;
+  }
+  #right {
+    flex: 3;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    overflow: auto;
+  }
+  #right {
+    display: none;
+  }
+  #left {
+    justify-content: start;
+    margin-top: 4vh;
+  }
+  #sign-in {
+    .logo {
+      margin-bottom: 2vh;
+    }
+    .text-input {
+      margin-bottom: 0.7rem;
+    }
+  }
+  #main-footer {
+    padding-top: 1rem;
+  }
+}

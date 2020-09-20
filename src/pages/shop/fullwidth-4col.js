@@ -10,7 +10,7 @@ import InstagramTwo from '../../components/Sections/Instagram/InstagramTwo'
   import { getProductsApi } from '../../lib/services'
 
 export default ({ product }) => {
-  const pageLimit = 12
+  const pageLimit = 10
   const [offset, setOffset] = useState(0)
   const [currentView, setCurrentView] = useState()
   const [currentSort, setCurrentSort] = useState()
@@ -42,7 +42,7 @@ export default ({ product }) => {
 
           <Paginator
             pageContainerClass='paginator'
-            totalRecords={productData.length}
+            totalRecords={product.length}
             pageLimit={pageLimit}
             pageNeighbours={2}
             setOffset={setOffset}
@@ -59,7 +59,6 @@ export default ({ product }) => {
 export const getStaticProps = async ({ context }) => {
   const { result } = await getProductsApi()
   return {
-    props: { product: result },
-    unstable_revalidate: 100
+    props: { product: result }
   }
 }

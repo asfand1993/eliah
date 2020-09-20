@@ -39,6 +39,13 @@ function Product ({ data, type, className }) {
     }
     return null
   }
+  const dataCategory = ({ categories }) => {
+    if (categories.length > 0) {
+      const category = categories.map(item => item.title)
+
+      return category.join(',')
+    } else return ''
+  }
   const addToCartHandle = e => {
     e.preventDefault()
     let productItem = checkProductInCart(cartState, data.productId)
@@ -140,14 +147,14 @@ function Product ({ data, type, className }) {
           </div>
           <div className='product__content'>
             <div className='product__content__header'>
-              <h5 className='product-category'>{data.category}</h5>
+              <h5 className='product-category'>{dataCategory(data)}</h5>
               <Rate currentRate={data.rate} />
             </div>
             <Link
               href={`${process.env.PUBLIC_URL}/shop/product/[slug]`}
               as={`${process.env.PUBLIC_URL}/shop/product/${data.slug}`}
             >
-              <a className='product-name'>{data.name}</a>
+              <a className='product-name'>{data['title']}</a>
             </Link>
             <div className='product__content__footer'>
               <h5 className='product-price--main'>
@@ -204,14 +211,14 @@ function Product ({ data, type, className }) {
           <div className='product-list__content'>
             <div className='product-list__content__top'>
               <div className='product-category__wrapper'>
-                <h5 className='product-category'>{data.category}</h5>
+                <h5 className='product-category'>{dataCategory(data)}</h5>
                 <Rate currentRate={data.rate} />
               </div>
               <Link
                 href={`${process.env.PUBLIC_URL}/shop/product/[slug]`}
                 as={`${process.env.PUBLIC_URL}/shop/product/${data.slug}`}
               >
-                <a className='product-name'>{data.name}</a>
+                <a className='product-name'>{data['title']}</a>
               </Link>
               <div className='product__price'>
                 <div className='product__price__wrapper'>
@@ -245,7 +252,7 @@ function Product ({ data, type, className }) {
               </div>
             </div>
             <div className='product-list__content__bottom'>
-              <p className='product-description'>{product['description']}</p>
+              <p className='product-description'>{data['description']}</p>
               <div className='product__actions'>
                 <div className='product-btn'>
                   <AddToCart

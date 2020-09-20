@@ -6,7 +6,7 @@ import ProductSlider from "../Elements/ProductSlider";
 export default function ProductSlideTwo({ data }) {
   const settings = {
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 2,
     slidesToScroll: 1,
     className: "product-slide__wrapper",
     prevArrow: <PrevArrow />,
@@ -15,19 +15,19 @@ export default function ProductSlideTwo({ data }) {
       {
         breakpoint: 1170,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 1,
         },
       },
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 1,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
         },
       },
       {

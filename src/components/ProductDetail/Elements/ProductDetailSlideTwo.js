@@ -4,9 +4,7 @@ import { PrevArrow, NextArrow } from '../../Other/SliderArrow'
 
 export default function ProductDetailSlideTwo ({ data }) {
 
-  console.log("_________________________")
-  console.log(data)
-  console.log("_________________________")
+
   const slider1Settings = {
     arrows: false,
     swipe: false
@@ -14,7 +12,7 @@ export default function ProductDetailSlideTwo ({ data }) {
   const slider2Settings = {
     arrows: true,
     focusOnSelect: true,
-    slidesToShow: 3,
+    // slidesToShow: 1,
     centerMode: true,
     centerPadding: '80px',
     prevArrow: <PrevArrow />,
@@ -35,7 +33,7 @@ export default function ProductDetailSlideTwo ({ data }) {
       {
         breakpoint: 576,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           centerPadding: '50px'
         }
       }

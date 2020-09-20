@@ -38,8 +38,12 @@ export default function ProductDetailInfo ({ data, onReviewSubmit, hideTab }) {
   }
   const {
     rewards: { isEnabled, points },
-    price: { retailPrice }
+    price: { retailPrice },
+    inventory: { availableQuantity,sku },
+    description
   } = data
+  console.log("________________________________________________________________")
+  console.log("________________________________________________________________",description)
   return (
     <div className='product-detail__content'>
       <div className='product-detail__content__header'>
@@ -66,14 +70,14 @@ export default function ProductDetailInfo ({ data, onReviewSubmit, hideTab }) {
             Brand: <span>{data.brand}</span>
           </li>
           <li>
-            Product code: <span>{data.code}</span>
+            Product code: <span>{sku}</span>
           </li>
           <li>
             Reward point: <span>{isEnabled ? points : 'N/A'}</span>
           </li>
           <li>
             Availability:
-            {data.quantity > 0 ? (
+            {availableQuantity > 0 ? (
               <span className='in-stock'> In Stock</span>
             ) : (
               <span className='out-stock'> Out Stock</span>
@@ -107,7 +111,7 @@ export default function ProductDetailInfo ({ data, onReviewSubmit, hideTab }) {
         <>
           <div className='divider'></div>
           <div className='product-detail__content__tab'>
-            <ProductDetailInfoTab onReviewSubmit={onReviewSubmit} />
+            <ProductDetailInfoTab onReviewSubmit={onReviewSubmit} description = {description} />
           </div>
         </>
       )}
